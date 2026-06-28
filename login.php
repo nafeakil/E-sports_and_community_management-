@@ -6,6 +6,12 @@
   <title>Login - Games Showcase</title>
   <link rel="stylesheet" href="style2.css">
   <style>
+  
+  body {
+  background: radial-gradient(circle, #ff006a 0%, #000 100%);
+  margin: 0;
+  min-height: 100vh; /* Forces the body to fill the entire screen height */
+}
   .login-box {
     backdrop-filter: blur(10px);
     position: absolute;
@@ -23,6 +29,9 @@
     align-items: center;
     padding: 30px; 
     box-sizing: border-box;
+    background-color: rgb(32, 32, 32); 
+    background-image: url('endfield.png');
+    background-size: cover;
   }
 
   .login-box form {
@@ -61,9 +70,6 @@
 </head>
 <body>
 
-  <video autoplay muted loop class="bg-video">
-    <source src="videoplayback (1).mp4" type="video/mp4"> 
-  </video>
 
   <div class="login-box">
     <h3 style="color: white; letter-spacing: 2px; margin-bottom: 20px;">LOGIN</h3>

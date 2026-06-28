@@ -151,12 +151,15 @@
 /* =========================================
    FORM STYLES (register.html)
    ========================================= */
+/* --- REGISTER GAME FORM STYLES --- */
+
 .FORM {
     backdrop-filter: blur(10px);
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* <--- The magic fix */
+    margin: 0 !important;             /* <--- Kills invisible ghost margins */
     width: 300px; 
     height: 390px;
     border-radius: 10px;
@@ -166,7 +169,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .FORM form {
     display: flex;
     flex-direction: column;
@@ -174,36 +176,56 @@
     width: 100%;
 }
 
-.input-email, .input-password, .input-name {
+/* Maps to your .input-group divs */
+.FORM .input-group {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Aligns labels cleanly to the left */
     width: 80%;             
-    margin: 5px 0;
+    margin: 10px 0;
 }
 
-.FORM input {
+.FORM label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 3px;
+    color: #ff006a; /* Adds a nice accent color to the labels */
+    font-weight: bold;
+}
+
+/* Targets both the text box AND the dropdown menu */
+.FORM input, 
+.FORM select {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    box-sizing: border-box; /* Prevents padding from breaking the 100% width */
 }
 
-.FORM Button {
+.FORM button {
+    width: 80%; /* Matches the width of the input fields */
     border-radius: 8px;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     box-shadow: 0 0 20px rgba(0,0,0,0.8);
-    margin-top: 15px; 
+    margin-top: 25px; 
+    font-weight: bold;
+    cursor: pointer;
+    background: #fff;
+    color: #000;
 }
 
-.FORM Button:hover {
+.FORM button:hover {
     transform: translateY(-3px);
     transition: 0.4s ease;
     background-color: #ff006a;
     color: white; 
+    border-color: #ff006a;
 }
+
 
 .RECORDED_PLAYER{
     backdrop-filter: blur(10px);
