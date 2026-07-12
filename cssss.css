@@ -53,6 +53,51 @@
     transition: 0.3s;
 }
 
+/* ========================================= */
+/* NEW ADDITIONS FOR HOME.PHP INTERACTIVITY  */
+/* ========================================= */
+
+/* Highlight the active tab in the header */
+.active-nav {
+    border-bottom: 3px solid #ff006a;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Subtle pulse effect on header hover */
+.section:hover {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* Styling for the Quick Access Cards on the Home Page */
+.quick-card {
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+    font-family: "BBH", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.quick-card:hover {
+    background: #ff006a;
+    border-color: #ff006a;
+    transform: scale(1.1);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 0, 106, 0.5);
+}
+
+/*-------------------------------------------------------------------*/
+
 
 .section a {
     color: inherit;          
@@ -118,7 +163,6 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.4s ease;
-    pointer-events: none;
 }
 
 .game.left .preview {
@@ -134,7 +178,6 @@
 .game:hover .preview {
     opacity: 1;
     transform: translateX(0);
-    pointer-events: auto;
 }
 
 .card:hover img {
@@ -301,27 +344,100 @@
 }
 
 
- .search-container { text-align: center; margin: 40px 0; }
-#newsSearch {
-    width: 50%; max-width: 600px; padding: 15px 25px; border-radius: 30px;
-    border: 2px solid #ff006a; background: rgba(0, 0, 0, 0.6); color: white;
-    font-size: 16px; outline: none; backdrop-filter: blur(5px);
+
+
+
+
+
+
+/* =========================================
+   ADMIN PAGE STYLES (admin.html)
+   ========================================= */
+.admin-body {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #00ffcc;
+}
+
+.dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form-card {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.form-card h3 {
+    margin-top: 0;
+    color: #00ffcc;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.form-card label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+.form-card input,
+.form-card textarea,
+.form-card select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background: #333;
+    color: white;
+    box-sizing: border-box;
+}
+
+.form-card button {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background: #00ffcc;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.form-card button:hover {
+    background: #00ccaa;
+}
+
+/* =========================================
+   PAGE TRANSITION FIX (Anti-White Flash)
+   ========================================= */
+body {
+    background-color: #000;
+}
+
+html {
+    visibility: hidden;
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        visibility: visible;
+        opacity: 1;
     }
-.news-container {
-    width: 85%; max-width: 1200px; margin: 0 auto 50px auto;
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
-    }
-.news-card {
-    background: rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px; overflow: hidden; color: white; display: flex; flex-direction: column;
-    }
-.img-report-wrapper { position: relative; width: 100%; height: 220px; }
-.news-image { width: 100%; height: 100%; object-fit: cover; border-bottom: 2px solid #333; }
-.news-time-badge {
-    position: absolute; top: 15px; left: 15px; background: rgba(0, 0, 0, 0.85);
-    color: #00ffcc; padding: 5px 12px; border-radius: 20px; font-size: 11px;
-    font-weight: bold; text-transform: uppercase; border: 1px solid #00ffcc;
-    }
-.news-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-.news-title { font-size: 22px; margin: 0 0 15px 0; text-transform: uppercase; }
-.news-text { font-size: 14px; color: #cccccc; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+}

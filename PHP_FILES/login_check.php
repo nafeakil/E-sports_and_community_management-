@@ -28,11 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         
         if ($pass_input === $row['password']) {
-            // 1. Set the session flags
+
             $_SESSION['logged_in'] = true;
             $_SESSION['active_user'] = $row['username'];
             
-            // 2. WRITE THE LOG INTO THE DATABASE
             $log_stmt = $conn->prepare("INSERT INTO login_logs (username) VALUES (?)");
             if ($log_stmt) {
                 $log_stmt->bind_param("s", $row['username']);
@@ -40,8 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $log_stmt->close();
             }
 
-            // 3. Send them to the homepage
-            // 3. Send them to the homepage
             header("Location: home.php");
             exit();
             

@@ -23,7 +23,7 @@ if(!isset($_SESSION['logged_in'])) {
   <div class="section dropdown">
     <a href="home.html">HOME</a>
     <div class="dropdown-content">
-      <a href="#">1</a>
+      <a href="news.php">game-news</a>
       <a href="#">2</a>
       <a href="#">3</a>
     </div>
@@ -37,7 +37,7 @@ if(!isset($_SESSION['logged_in'])) {
       <a href="#">3</a>
     </div>
   </div>
-  <div class="section dropdown"><a href="players.html">PLAYERS</a>
+  <div class="section dropdown"><a href="players.php">PLAYERS</a>
   <div class="dropdown-content">
       <a href="logout.php">LOGOUT</a>
   </div>
@@ -45,6 +45,11 @@ if(!isset($_SESSION['logged_in'])) {
 </header>
 <h2 style="text-align: center; color: white; font-size: 45px; margin-top: 80px; text-shadow: 0 0 15px rgba(0, 0, 0, 0.8); letter-spacing: 3px;">WELCOME</h2>
   <br>
+  <div style="background: rgba(0,0,0,0.5); color: #ff006a; padding: 10px; margin: 30px auto; width: 80%; border-radius: 5px; overflow: hidden; border: 1px solid #ff006a;">
+      <marquee behavior="scroll" direction="left" scrollamount="5">
+          ⚡ NEWS: New gameplay trailers added for ENDFIELD and WUTHERING WAVES! | Stay tuned for the upcoming tournament! | Server status: ONLINE
+      </marquee>
+  </div>
 
 <script>
     const video = document.querySelector('.bg-video');

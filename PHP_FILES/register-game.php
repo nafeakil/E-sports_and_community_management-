@@ -125,7 +125,7 @@ if(!isset($_SESSION['logged_in'])) {
       <a href="#">3</a>
     </div>
   </div>
-  <div class="section dropdown"><a href="players.html">PLAYERS</a>
+  <div class="section dropdown"><a href="players.php">PLAYERS</a>
   <div class="dropdown-content">
       <a href="logout.php">LOGOUT</a>
   </div>
@@ -145,10 +145,10 @@ if(!isset($_SESSION['logged_in'])) {
               <label for="gameSelect">Select Game</label>
               <select name="game_select" id="gameSelect" required>
                   <option value="" disabled selected>Choose a Game</option>
-                  <option value="Endfield">Endfield</option>
-                  <option value="WUWA">WUWA</option>
-                  <option value="ZZZ">ZZZ</option>
-                  <option value="HSR">HSR</option> 
+                  <option value="Arknights Endfield">Endfield</option>
+                  <option value="Wuthering Waves">WUWA</option>
+                  <option value="Zenless Zone Zero">ZZZ</option>
+                  <option value="Honkai: Star Rail">HSR</option> 
               </select>
           </div>
 
