@@ -18,9 +18,6 @@ $current_user = $_SESSION['active_user'];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
-    // ==========================================
-    // ACTION: UPDATE PROFILE
-    // ==========================================
     if (isset($_POST['action']) && $_POST['action'] === 'update') {
         
         $new_username = trim($_POST['new_username']);
@@ -65,9 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // ==========================================
-    // ACTION: DELETE ACCOUNT
-    // ==========================================
+
+    // DELETE ACCOUNT
     if (isset($_POST['action']) && $_POST['action'] === 'delete') {
         
         // 1. Delete their registered games first

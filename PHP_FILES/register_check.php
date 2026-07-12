@@ -16,13 +16,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pass_input = $_POST['new_password'];
     $pass_confirm = $_POST['confirm_password'];
 
-    // 1. Check if passwords match
+    // Check if passwords match
     if ($pass_input !== $pass_confirm) {
         echo "<script>alert('Passwords do not match. Please try again.'); window.location.href='register.php';</script>";
         exit();
     }
 
-    // 2. Check if the username already exists in the database
+    // Check if the username already exists
     $check_stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
     $check_stmt->bind_param("s", $user_input);
     $check_stmt->execute();
