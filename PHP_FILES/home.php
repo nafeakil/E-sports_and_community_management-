@@ -19,13 +19,12 @@ if(!isset($_SESSION['logged_in'])) {
     <source src="../TEMPLATES_FILE/videoplayback (1).mp4" type="video/mp4">
   </video>
 
-  <header class="header">
+<header class="header">
   <div class="section dropdown">
-    <a href="home.html">HOME</a>
+    <a href="home.php">HOME</a>
     <div class="dropdown-content">
       <a href="news.php">game-news</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
+      <a href="voting.php">vote-games</a>
     </div>
   </div>
   
@@ -33,8 +32,8 @@ if(!isset($_SESSION['logged_in'])) {
     <a href="Games.php">GAMES</a>
     <div class="dropdown-content">
       <a href="register-game.php">REGISTER-GAME</a>
-      <a href="#">GAMEPLAY</a>
-      <a href="#">3</a>
+      <a href="GAMEPLAY.php">GAMEPLAY</a>
+      <a href="download_game.php">DOWNLOAD</a>
     </div>
   </div>
   <div class="section dropdown"><a href="players.php">PLAYERS</a>
@@ -43,6 +42,7 @@ if(!isset($_SESSION['logged_in'])) {
   </div>
   </div> 
 </header>
+
 <h2 style="text-align: center; color: white; font-size: 45px; margin-top: 80px; text-shadow: 0 0 15px rgba(0, 0, 0, 0.8); letter-spacing: 3px;">WELCOME</h2>
   <br>
   <div style="background: rgba(0,0,0,0.5); color: #ff006a; padding: 10px; margin: 30px auto; width: 80%; border-radius: 5px; overflow: hidden; border: 1px solid #ff006a;">

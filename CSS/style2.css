@@ -118,7 +118,6 @@
     opacity: 0;
     pointer-events: none;
     transition: 0.4s ease;
-    pointer-events: none;
 }
 
 .game.left .preview {
@@ -160,8 +159,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* <--- The magic fix */
-    margin: 0 !important;             /* <--- Kills invisible ghost margins */
+    transform: translate(-50%, -50%); 
+    margin: 0 !important;             
     width: 300px; 
     height: 390px;
     border-radius: 10px;
@@ -178,11 +177,10 @@
     width: 100%;
 }
 
-/* Maps to your .input-group divs */
 .FORM .input-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligns labels cleanly to the left */
+    align-items: flex-start; 
     width: 80%;             
     margin: 10px 0;
 }
@@ -191,11 +189,10 @@
     font-size: 12px;
     letter-spacing: 1px;
     margin-bottom: 3px;
-    color: #ff006a; /* Adds a nice accent color to the labels */
+    color: #ff006a; 
     font-weight: bold;
 }
 
-/* Targets both the text box AND the dropdown menu */
 .FORM input, 
 .FORM select {
     width: 100%;
@@ -204,11 +201,11 @@
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.9);
     color: #333;
-    box-sizing: border-box; /* Prevents padding from breaking the 100% width */
+    box-sizing: border-box; 
 }
 
 .FORM button {
-    width: 80%; /* Matches the width of the input fields */
+    width: 80%; 
     border-radius: 8px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -228,7 +225,6 @@
     border-color: #ff006a;
 }
 
-
 .RECORDED_PLAYER{
     backdrop-filter: blur(10px);
     position: absolute;
@@ -244,7 +240,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .player-list {
     list-style: none;
@@ -262,7 +257,6 @@
 }
 
 /* DROPDOWN MENU LOGIC */
-
 .dropdown {
     position: relative;
     z-index: 100; 
@@ -291,7 +285,6 @@
     border-bottom: none;
 }
 
-
 .dropdown-content a:hover {
     background-color: #ff006a;
 }
@@ -300,28 +293,300 @@
     display: block;
 }
 
-
- .search-container { text-align: center; margin: 40px 0; }
+.search-container { text-align: center; margin: 40px 0; }
 #newsSearch {
     width: 50%; max-width: 600px; padding: 15px 25px; border-radius: 30px;
     border: 2px solid #ff006a; background: rgba(0, 0, 0, 0.6); color: white;
     font-size: 16px; outline: none; backdrop-filter: blur(5px);
-    }
+}
 .news-container {
     width: 85%; max-width: 1200px; margin: 0 auto 50px auto;
     display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
-    }
+}
 .news-card {
     background: rgba(0, 0, 0, 0.8); border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px; overflow: hidden; color: white; display: flex; flex-direction: column;
-    }
+}
 .img-report-wrapper { position: relative; width: 100%; height: 220px; }
 .news-image { width: 100%; height: 100%; object-fit: cover; border-bottom: 2px solid #333; }
 .news-time-badge {
     position: absolute; top: 15px; left: 15px; background: rgba(0, 0, 0, 0.85);
-    color: #00ffcc; padding: 5px 12px; border-radius: 20px; font-size: 11px;
-    font-weight: bold; text-transform: uppercase; border: 1px solid #00ffcc;
-    }
+    color: #ff006a; padding: 5px 12px; border-radius: 20px; font-size: 11px;
+    font-weight: bold; text-transform: uppercase; border: 1px solid #ff006a;
+}
 .news-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
 .news-title { font-size: 22px; margin: 0 0 15px 0; text-transform: uppercase; }
 .news-text { font-size: 14px; color: #cccccc; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+
+/* =========================================
+   GAMEPLAY PAGE OVERHAUL
+   ========================================= */
+.showcase-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    padding: 20px 0;
+    justify-items: center;
+}
+
+.game-card {
+    background: rgba(10, 10, 10, 0.85);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 550px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #00ffcc;
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.15);
+}
+
+.game-card h2 {
+    color: #fff;
+    letter-spacing: 2px;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.game-card video {
+    width: 100%;
+    border-radius: 8px;
+    background: #000;
+    border: 1px solid #555;
+    margin-top: 10px;
+    aspect-ratio: 16/9; 
+}
+
+.video-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.ui-btn {
+    flex: 1;
+    background: transparent;
+    color: #888;
+    border: 1px solid #444;
+    padding: 8px 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: "BBH", sans-serif;
+}
+
+.ui-btn:hover {
+    color: #00ffcc;
+    border-color: #00ffcc;
+    background: rgba(0, 255, 204, 0.1);
+}
+
+.ui-btn.active {
+    color: #000;
+    background: #00ffcc;
+    border-color: #00ffcc;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+}
+
+#gameSearch {
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 30px;
+    border: 2px solid #333;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    text-align: center;
+    font-family: 'BBH', monospace;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#gameSearch:focus {
+    border-color: #ff006a;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+}
+
+
+/* =========================================
+   DOWNLOAD PAGE STYLES
+   ========================================= */
+.download-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 10%;
+    margin-bottom: 50px;
+}
+
+/* The anchor tag needs to act as a block element */
+.download-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: block; 
+}
+
+.download-link:hover {
+    transform: translateY(-8px);
+}
+
+/* New independent classes so they don't break the home page */
+.dl-game {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 250px; /* Force the container width to match the card width */
+}
+
+.dl-card {
+    width: 250px;
+    height: 350px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.dl-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.download-link:hover .dl-card img {
+    transform: scale(1.0);
+}
+
+.dl-game h2 {
+    color: #ff006a;
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0;
+    letter-spacing: 1px;
+    height: 3rem; /* Fixed height for the text area ensures rows align */
+    display: flex;
+    align-items: center; /* Vertically centers text if it wraps to two lines */
+    justify-content: center;
+}
+
+
+ /* --- ADMIN LOGIN FORM STYLES --- */
+      .admin-login-box {
+          width: 400px; margin: 150px auto; background: rgba(0, 0, 0, 0.8);
+          padding: 40px; border-radius: 15px; border: 1px solid #ff006a;
+          box-shadow: 0 0 20px rgba(255, 0, 106, 0.4); color: white; text-align: center;
+      }
+      .admin-login-box input {
+          width: 90%; padding: 10px; margin-bottom: 20px; background: rgba(255,255,255,0.9);
+          border: none; border-radius: 5px; font-weight: bold; outline: none;
+      }
+      
+      /* --- ADMIN DASHBOARD LAYOUT --- */
+      .dashboard-wrapper {
+          display: flex; min-height: 80vh; margin-top: 80px; padding: 20px; gap: 20px;
+      }
+      .sidebar {
+          width: 250px; background: rgba(0, 0, 0, 0.8); border: 1px solid #ff006a;
+          border-radius: 10px; padding: 20px 0; display: flex; flex-direction: column;
+      }
+      .sidebar-title {
+          color: white; text-align: center; font-size: 1.2rem; margin-bottom: 20px;
+          border-bottom: 1px solid rgba(255, 0, 106, 0.3); padding-bottom: 15px;
+      }
+      .tab-btn {
+          background: transparent; color: white; border: none; padding: 15px 20px;
+          text-align: left; font-size: 16px; cursor: pointer; transition: 0.3s;
+          border-left: 3px solid transparent; width: 100%;
+      }
+      .tab-btn:hover { background: rgba(255, 0, 106, 0.1); color: #ff006a; }
+      .tab-btn.active { border-left: 3px solid #ff006a; background: rgba(255, 0, 106, 0.2); color: #ff006a; font-weight: bold; }
+      
+      .content-area {
+          flex: 1; background: rgba(0, 0, 0, 0.7); border: 1px solid #ff006a;
+          border-radius: 10px; padding: 40px; color: white; position: relative;
+      }
+      .tab-content { display: none; }
+      .tab-content.active { display: block; animation: fadeIn 0.4s ease; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+      /* --- FORM & TABLE STYLES --- */
+      .content-area h2 { color: #ff006a; border-bottom: 1px solid #ff006a; padding-bottom: 10px; margin-bottom: 20px; margin-top: 0; }
+      .admin-form label { display: block; margin-bottom: 8px; color: #ff006a; }
+      .admin-form input, .admin-form textarea {
+          width: 100%; padding: 10px; margin-bottom: 20px; background: rgba(255,255,255,0.9);
+          border: none; border-radius: 5px; font-family: inherit; font-size: 14px; box-sizing: border-box;
+      }
+      .admin-form textarea { resize: vertical; height: 150px; }
+      .admin-btn {
+          background: #ff006a; 
+          color: white; /* Changed from black to white */
+          border: none; 
+          padding: 10px 20px;
+          font-weight: bold; 
+          cursor: pointer; 
+          border-radius: 5px; 
+          transition: 0.3s;
+      }
+      .admin-btn:hover { 
+          background: #d40058; /* Slightly darker shade for better hover effect */
+          color: white;
+          box-shadow: 0 0 10px #ff006a; 
+      }
+      
+      .data-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+      .data-table th, .data-table td { padding: 12px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.2); }
+      .data-table th { color: #ff006a; }
+      .action-btn { text-decoration: none; font-weight: bold; margin-right: 15px; }
+      .edit-btn { color: #ffcc00; }
+      .edit-btn:hover { text-shadow: 0 0 10px #ffcc00; }
+      .delete-btn { color: #ff4444; }
+      .delete-btn:hover { text-shadow: 0 0 10px red; }
+
+      .success-msg { color:#ff006a; text-align:center; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; text-shadow: 0 0 10px #ff006a; }
+      .error-msg { color:#ff006a; text-align:center; margin-bottom: 20px; font-weight: bold; font-size: 1.1rem; }
+
+       /* Poll Container Styling */
+      .poll-container {
+          width: 70%; 
+          margin: 120px auto 40px auto; /* 120px top margin clears the header */
+          background: rgba(0, 0, 0, 0.85);
+          padding: 30px; 
+          border-radius: 10px; 
+          border: 1px solid #ff006a; 
+          color: white;
+          box-shadow: 0 0 15px rgba(255, 0, 106, 0.2);
+      }
+      .game-row {
+          display: flex; align-items: center; gap: 20px; background: rgba(17, 17, 17, 0.9);
+          padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #333;
+      }
+      .game-img { width: 120px; height: 80px; object-fit: cover; border-radius: 5px; border: 1px solid #ff006a; }
+      .game-info { flex-grow: 1; }
+      .game-title { font-size: 1.2rem; font-weight: bold; margin-bottom: 5px; display: flex; justify-content: space-between; text-transform: uppercase;}
+      .bar-bg { width: 100%; background: #222; height: 12px; border-radius: 6px; overflow: hidden; margin-bottom: 10px; border: 1px solid #444;}
+      .bar-fill { background: #ff006a; height: 100%; transition: width 0.5s ease-in-out; box-shadow: 0 0 10px #ff006a;}
+      .vote-btn {
+          background: transparent; color: #ff006a; border: 1px solid #ff006a;
+          padding: 10px 25px; font-weight: bold; border-radius: 5px; cursor: pointer; transition: 0.3s;
+          text-transform: uppercase; letter-spacing: 1px;
+      }
+      .vote-btn:hover:not(:disabled) { background: #ff006a; color: white; box-shadow: 0 0 10px #ff006a; }
+      .vote-btn:disabled { border-color: #555; color: #555; cursor: not-allowed; background: transparent; box-shadow: none; }

@@ -13,7 +13,8 @@ $db_name = "games_showcase";
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);
 if ($conn->connect_error) { die("Connection failed: " . $conn->connect_error); }
 
-$news_query = "SELECT * FROM news_articles ORDER BY created_at DESC";
+// Fetch news from the database securely
+$news_query = "SELECT * FROM news ORDER BY created_at DESC";
 $news_result = $conn->query($news_query);
 ?>
 <!DOCTYPE html>
@@ -30,13 +31,12 @@ $news_result = $conn->query($news_query);
     <source src="../TEMPLATES_FILE/videoplayback (1).mp4" type="video/mp4">
   </video>
 
-  <header class="header">
+<header class="header">
   <div class="section dropdown">
-    <a href="home.html">HOME</a>
+    <a href="home.php">HOME</a>
     <div class="dropdown-content">
       <a href="news.php">game-news</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
+      <a href="voting.php">vote-games</a>
     </div>
   </div>
   
@@ -44,8 +44,8 @@ $news_result = $conn->query($news_query);
     <a href="Games.php">GAMES</a>
     <div class="dropdown-content">
       <a href="register-game.php">REGISTER-GAME</a>
-      <a href="#">GAMEPLAY</a>
-      <a href="#">3</a>
+      <a href="GAMEPLAY.php">GAMEPLAY</a>
+      <a href="download_game.php">DOWNLOAD</a>
     </div>
   </div>
   <div class="section dropdown"><a href="players.php">PLAYERS</a>
@@ -58,11 +58,11 @@ $news_result = $conn->query($news_query);
   <h2 style="text-align: center; color: white; font-size: 45px; margin-top: 80px;">TRANSMISSION LOGS</h2>
 
   <div class="search-container">
-      <input type="text" id="newsSearch" placeholder="Search transmissions..." autocomplete="off">
+      <input type="text" id="newsSearch" placeholder="Search Transmissions" autocomplete="off" style="width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
   </div>
 
   <div class="news-container" id="newsFeed">
-      <?php if ($news_result && $news_result->num_rows > 0): ?>
+      <?php if ($news_result->num_rows > 0): ?>
           <?php while($row = $news_result->fetch_assoc()): ?>
               <div class="news-card">
                   <div class="img-report-wrapper">

@@ -87,9 +87,9 @@
     <h3 style="color: white; letter-spacing: 2px; margin-bottom: 10px;">REGISTER</h3>
     
     <form action="register_check.php" method="POST">
-      <input type="text" name="new_username" placeholder="Choose a Username" required autocomplete="off">
-      <input type="password" name="new_password" placeholder="Create Password" required>
-      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <input type="text" name="new_username" placeholder="Choose a Username" required autocomplete="off" style="font-family: 'Aria', monospace;">
+      <input type="password" name="new_password" placeholder="Create Password" required style="font-family: 'Aria', monospace;">
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required style="font-family: 'Aria', monospace;">
       
       <button type="submit">CREATE ACCOUNT</button>
       

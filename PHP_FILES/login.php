@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Games Showcase</title>
-  <link rel="stylesheet" href="HTML_WEB_CLASS_NO_EDITS/CSS/style2.css">
+  <link rel="stylesheet" href="../CSS/style2.css">
   <style>
   
   * {
@@ -12,18 +12,18 @@
     margin: 0;
     padding: 0;
     font-family: "BBH", sans-serif;
-}
+  }
 
-@font-face {
+  @font-face {
     font-family: 'BBH';
     src: url('../TEMPLATES_FILE/BBHBartle-Regular.ttf');
-}
+  }
   
   body {
-  background: radial-gradient(circle, #ff006a 0%, #000 100%);
-  margin: 0;
-  min-height: 100vh; 
-}
+    background: radial-gradient(circle, #ff006a 0%, #000 100%);
+    margin: 0;
+    min-height: 100vh; 
+  }
   .login-box {
     backdrop-filter: blur(10px);
     position: absolute;
@@ -78,6 +78,17 @@
     transition: 0.4s ease;
     background-color: #ff006a; 
   }
+  
+  /* Make sure video covers background nicely if it loads */
+  .bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+  }
   </style>
 </head>
 <body>
@@ -86,8 +97,8 @@
     <h3 style="color: white; letter-spacing: 2px; margin-bottom: 20px;">LOGIN</h3>
     
     <form action="login_check.php" method="POST">
-      <input type="text" name="username" placeholder="Username" required autocomplete="off">
-      <input type="password" name="password" placeholder="Password" required>
+      <input type="text" name="username" placeholder="Username" required autocomplete="off" style="font-family: 'Aria', monospace;">
+      <input type="password" name="password" placeholder="Password" required style="font-family: 'Aria', monospace;">
       <button type="submit">LOGIN</button>
     </form>
 
@@ -98,15 +109,5 @@
     </p>
 </div>
 
-<script>
-    const video = document.querySelector('.bg-video');
-    window.addEventListener('DOMContentLoaded', () => {
-        const savedTime = localStorage.getItem('bgVideoTime');
-        if (savedTime) video.currentTime = parseFloat(savedTime);
-    });
-    window.addEventListener('beforeunload', () => {
-        localStorage.setItem('bgVideoTime', video.currentTime);
-    });
-</script>
 </body>
 </html>

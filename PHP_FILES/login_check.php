@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         
         if ($pass_input === $row['password']) {
-
+            // These two variables are critical! 'active_user' is what voting.php checks for.
             $_SESSION['logged_in'] = true;
             $_SESSION['active_user'] = $row['username'];
             

@@ -19,13 +19,12 @@ if(!isset($_SESSION['logged_in'])) {
     <source src="../TEMPLATES_FILE/videoplayback (1).mp4" type="video/mp4"> 
   </video>
 
-  <header class="header">
+<header class="header">
   <div class="section dropdown">
     <a href="home.php">HOME</a>
     <div class="dropdown-content">
       <a href="news.php">game-news</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
+      <a href="voting.php">vote-games</a>
     </div>
   </div>
   
@@ -33,14 +32,14 @@ if(!isset($_SESSION['logged_in'])) {
     <a href="Games.php">GAMES</a>
     <div class="dropdown-content">
       <a href="register-game.php">REGISTER-GAME</a>
-      <a href="#">GAMEPLAY</a>
-      <a href="#">3</a>
+      <a href="GAMEPLAY.php">GAMEPLAY</a>
+      <a href="download_game.php">DOWNLOAD</a>
     </div>
   </div>
   <div class="section dropdown"><a href="players.php">PLAYERS</a>
-    <div class="dropdown-content">
-        <a href="logout.php">LOGOUT</a>
-    </div>
+  <div class="dropdown-content">
+      <a href="logout.php">LOGOUT</a>
+  </div>
   </div> 
 </header>
 <br>
@@ -51,14 +50,14 @@ if(!isset($_SESSION['logged_in'])) {
 <br>
 
 <div style="text-align: center; margin-bottom: 20px;">
-  <input type="text" id="gameSearch" placeholder="Search" autocomplete="off" style="padding: 10px; width: 600px; border-radius: 8px; border: none; background: rgba(255, 255, 255, 0.9); font-size: 14px; text-align: center; box-shadow: 0 0 15px rgba(0,0,0,0.8); outline: none; font-weight: bold;">
+   <input type="text" id="newsSearch" placeholder="Search" autocomplete="off" style="width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
 </div>
 <div class="row">
   <div class="game left">
     <div class="card">
       <img src="../TEMPLATES_FILE/endfield.png" alt="Endfield">
     </div>
-    <video class="preview" autoplay muted loop controls>
+    <video class="preview" muted loop controls>
       <source src="../TEMPLATES_FILE/ENDFIELD - Trim.mp4" type="video/mp4">
     </video>
     <br>
@@ -69,7 +68,7 @@ if(!isset($_SESSION['logged_in'])) {
     <div class="card">
       <img src="../TEMPLATES_FILE/wuwa.png" alt="Wuthering Waves">
     </div>
-    <video class="preview" autoplay muted loop controls>
+    <video class="preview" muted loop controls>
       <source src="../TEMPLATES_FILE/WUWA.mp4" type="video/mp4">
     </video>
     <br>
@@ -84,7 +83,7 @@ if(!isset($_SESSION['logged_in'])) {
     <div class="card">
       <img src="../TEMPLATES_FILE/zzz.png" alt="ZZZ">
     </div>
-    <video class="preview" autoplay muted loop controls>
+    <video class="preview" muted loop controls>
       <source src="../TEMPLATES_FILE/zzz.mp4" type="video/mp4">
     </video>
     <br>
@@ -95,7 +94,7 @@ if(!isset($_SESSION['logged_in'])) {
     <div class="card">
       <img src="../TEMPLATES_FILE/hsr.png" alt="HSR">
     </div>
-    <video class="preview" autoplay muted loop controls>
+    <video class="preview" muted loop controls>
       <source src="../TEMPLATES_FILE/HSR.mp4" type="video/mp4">
     </video>
     <br>
@@ -110,7 +109,7 @@ if(!isset($_SESSION['logged_in'])) {
     <div class="card">
       <img src="../TEMPLATES_FILE/palworld.png" alt="ZZZ">
     </div>
-    <video class="preview" autoplay muted loop controls>
+    <video class="preview" muted loop controls>
       <source src="../TEMPLATES_FILE/PALWORLD.mp4" type="video/mp4">
     </video>
     <h2>Palworld</h2>
@@ -120,7 +119,7 @@ if(!isset($_SESSION['logged_in'])) {
     <div class="card">
       <img src="../TEMPLATES_FILE/VALORANT.png" alt="VALORANT">
     </div>
-    <video class="preview" autoplay muted loop controls>
+    <video class="preview" muted loop controls>
       <source src="../TEMPLATES_FILE/VALORANT.mp4" type="video/mp4">
     </video>
     <h2>VALORANT</h2>
@@ -142,7 +141,7 @@ if(!isset($_SESSION['logged_in'])) {
         localStorage.setItem('bgVideoTime', video.currentTime);
     });
 
-    // --- UPDATED SEARCH LOGIC ---
+    //SEARCH LOGIC
     const searchInput = document.getElementById('gameSearch');
     const rows = document.querySelectorAll('.row');
 

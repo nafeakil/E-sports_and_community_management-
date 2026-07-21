@@ -25,23 +25,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Handle Username Change
         if (!empty($new_username) && $new_username !== $current_user) {
-            // Ensure username isn't already taken
             $check = $conn->prepare("SELECT id FROM users WHERE username = ?");
             $check->bind_param("s", $new_username);
             $check->execute();
             
             if ($check->get_result()->num_rows == 0) {
-                // Update username in users table
+                // Update username in users
                 $stmt = $conn->prepare("UPDATE users SET username = ? WHERE username = ?");
                 $stmt->bind_param("ss", $new_username, $current_user);
                 $stmt->execute();
                 
-                // Update username in game_registrations table (so they keep their games)
                 $stmt2 = $conn->prepare("UPDATE game_registrations SET player_name = ? WHERE player_name = ?");
                 $stmt2->bind_param("ss", $new_username, $current_user);
                 $stmt2->execute();
                 
-                // Update their current session
                 $_SESSION['active_user'] = $new_username;
                 $current_user = $new_username;
             } else {
@@ -50,14 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        // Handle Password Change
         if (!empty($new_password)) {
             $stmt = $conn->prepare("UPDATE users SET password = ? WHERE username = ?");
             $stmt->bind_param("ss", $new_password, $current_user);
             $stmt->execute();
         }
 
-        // Success redirect
         echo "<script>alert('Profile updated successfully!'); window.location.href='players.php';</script>";
         exit();
     }
@@ -66,17 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // DELETE ACCOUNT
     if (isset($_POST['action']) && $_POST['action'] === 'delete') {
         
-        // 1. Delete their registered games first
         $stmt1 = $conn->prepare("DELETE FROM game_registrations WHERE player_name = ?");
         $stmt1->bind_param("s", $current_user);
         $stmt1->execute();
 
-        // 2. Delete the user account
         $stmt2 = $conn->prepare("DELETE FROM users WHERE username = ?");
         $stmt2->bind_param("s", $current_user);
         $stmt2->execute();
 
-        // 3. Destroy session and send to login
         session_destroy();
         echo "<script>alert('Account permanently deleted.'); window.location.href='login.php';</script>";
         exit();

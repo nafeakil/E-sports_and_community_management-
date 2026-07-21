@@ -140,6 +140,8 @@ $conn->close();
                       <option value="Wuthering Waves">Wuthering Waves</option>
                       <option value="Zenless Zone Zero">Zenless Zone Zero</option>
                       <option value="Honkai: Star Rail">Honkai: Star Rail</option>
+                      <option value="Palworld">Palworld</option>
+                      <option value="Valorant">Valorant</option>
                   </select>
                   <button type="submit" name="action" value="change" class="btn btn-update">UPDATE REGISTRATION</button>
               </form>
@@ -168,7 +170,9 @@ $conn->close();
           "Arknights Endfield": { img: "../TEMPLATES_FILE/endfield.png", desc: "Deploy your operators and explore a vast, dangerous world in this 3D real-time strategic RPG." },
           "Wuthering Waves": { img: "../TEMPLATES_FILE/wuwa.png", desc: "Awaken in a new world. Master deep combat mechanics and absorb echoes in this action-packed open-world RPG." },
           "Zenless Zone Zero": { img: "../TEMPLATES_FILE/zzz.png", desc: "Welcome to New Eridu. Dive into the Hollows and experience hyper-stylized urban combat." },
-          "Honkai: Star Rail": { img: "../TEMPLATES_FILE/hsr.png", desc: "Hop aboard the Astral Express and explore the galaxy in this space fantasy RPG." }
+          "Honkai: Star Rail": { img: "../TEMPLATES_FILE/hsr.png", desc: "Hop aboard the Astral Express and explore the galaxy in this space fantasy RPG." },
+          "Palworld": { img: "../TEMPLATES_FILE/palworld.png", desc: "Fight, farm, build and work alongside mysterious creatures called Pals in this multiplayer, open-world survival and crafting game." },
+          "Valorant": { img: "../TEMPLATES_FILE/VALORANT.png", desc: "Blend your style and experience on a global, competitive stage in this 5v5 character-based tactical shooter." }
       };
 
       function openGamePanel(regId, gameName) {
@@ -189,13 +193,12 @@ $conn->close();
           document.getElementById('gamePanel').classList.remove('open'); 
       }
 
-      // New function to toggle the Manage Games form
       function toggleGameManager() {
           const form = document.getElementById('manageGameForm');
           const icon = document.getElementById('toggleIcon');
           
           if (form.style.display === 'none') {
-              form.style.display = 'flex'; // Use flex to maintain your CSS layout
+              form.style.display = 'flex';
               icon.textContent = '';
           } else {
               form.style.display = 'none';
