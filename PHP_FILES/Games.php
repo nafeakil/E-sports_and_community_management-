@@ -50,7 +50,7 @@ if(!isset($_SESSION['logged_in'])) {
 <br>
 
 <div style="text-align: center; margin-bottom: 20px;">
-   <input type="text" id="newsSearch" placeholder="Search" autocomplete="off" style="width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
+   <input type="text" id="gameSearch" placeholder="Search" autocomplete="off" style="color: white; width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
 </div>
 <div class="row">
   <div class="game left">

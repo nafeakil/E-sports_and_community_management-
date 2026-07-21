@@ -58,7 +58,7 @@ $news_result = $conn->query($news_query);
   <h2 style="text-align: center; color: white; font-size: 45px; margin-top: 80px;">TRANSMISSION LOGS</h2>
 
   <div class="search-container">
-      <input type="text" id="newsSearch" placeholder="Search Transmissions" autocomplete="off" style="width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
+      <input type="text" id="newsSearch" placeholder="Search" autocomplete="off" style="width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
   </div>
 
   <div class="news-container" id="newsFeed">

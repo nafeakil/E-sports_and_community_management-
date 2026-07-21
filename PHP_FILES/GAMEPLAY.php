@@ -53,7 +53,7 @@ if(!isset($_SESSION['logged_in'])) {
 
   <div class="showcase-container">
       <div class="search-wrapper">
-         <input type="text" id="newsSearch" placeholder="Search" autocomplete="off" style="width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
+         <input type="text" id="gameSearch" placeholder="Search" autocomplete="off" style="color: white; width: 50%; padding: 10px; margin: 20px auto; display: block; border-radius: 20px; border: none; outline: none;">
       </div>
 
       <!-- MANUAL HTML GRID -->
@@ -68,7 +68,7 @@ if(!isset($_SESSION['logged_in'])) {
               <div class="video-controls">
                   <button class="ui-btn active" onclick="switchVideo(this, 'vid-endfield', '../TEMPLATES_FILE/ENDFIELD_COMBAT.mp4')">COMBAT</button>
                   <button class="ui-btn" onclick="switchVideo(this, 'vid-endfield', '../TEMPLATES_FILE/ENDFIElD_MECHANICS.mp4')">MECHANIC</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-endfield', '../TEMPLATES_FILE/Endfield_world.mp4')">WORLD</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-endfield', '../TEMPLATES_FILE/Endfield_WORLD.mp4')">WORLD</button>
               </div>
               <!-- needed change -->
           </div>
@@ -94,8 +94,8 @@ if(!isset($_SESSION['logged_in'])) {
               </video>
               <div class="video-controls">
                   <button class="ui-btn active" onclick="switchVideo(this, 'vid-zzz', '../TEMPLATES_FILE/zzz_combat.mp4')">COMBAT</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-zzz', '../TEMPLATES_FILE/ZZZ_mechanic.mp4')">MECHANIC</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-zzz', '../TEMPLATES_FILE/ZZZ_world.mp4')">WORLD</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-zzz', '../TEMPLATES_FILE/ZenlessZoneZero_mechanics.mp4')">MECHANIC</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-zzz', '../TEMPLATES_FILE/ZenlessZoneZero_exploration.mp4')">WORLD</button>
               </div>
           </div>
 
@@ -103,12 +103,12 @@ if(!isset($_SESSION['logged_in'])) {
           <div class="game-card" data-title="honkai star rail">
               <h2>HONKAI STAR RAIL</h2>
               <video id="vid-hsr" muted loop controls>
-                  <source src="../TEMPLATES_FILE/HSR.mp4" type="video/mp4">
+                  <source src="../TEMPLATES_FILE/Honkai_ Star Rail_combat.mp4" type="video/mp4">
               </video>
               <div class="video-controls">
-                  <button class="ui-btn active" onclick="switchVideo(this, 'vid-hsr', '../TEMPLATES_FILE/HSR.mp4')">COMBAT</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-hsr', '../TEMPLATES_FILE/HSR_mechanic.mp4')">MECHANIC</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-hsr', '../TEMPLATES_FILE/HSR_world.mp4')">WORLD</button>
+                  <button class="ui-btn active" onclick="switchVideo(this, 'vid-hsr', '../TEMPLATES_FILE/Honkai_ Star Rail_combat.mp4')">COMBAT</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-hsr', '../TEMPLATES_FILE/Honkai_ Star Rail_mechanics.mp4')">MECHANIC</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-hsr', '../TEMPLATES_FILE/Honkai_ Star Rail_exploration.mp4')">WORLD</button>
               </div>
           </div>
 
@@ -116,12 +116,12 @@ if(!isset($_SESSION['logged_in'])) {
           <div class="game-card" data-title="palworld">
               <h2>PALWORLD</h2>
               <video id="vid-palworld" muted loop controls>
-                  <source src="../TEMPLATES_FILE/PALWORLD.mp4" type="video/mp4">
+                  <source src="../TEMPLATES_FILE/pal_combat.mp4" type="video/mp4">
               </video>
               <div class="video-controls">
-                  <button class="ui-btn active" onclick="switchVideo(this, 'vid-palworld', '../TEMPLATES_FILE/PALWORLD.mp4')">COMBAT</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-palworld', '../TEMPLATES_FILE/PALWORLD_mechanic.mp4')">MECHANIC</button>
-                  <button class="ui-btn" onclick="switchVideo(this, 'vid-palworld', '../TEMPLATES_FILE/PALWORLD_world.mp4')">WORLD</button>
+                  <button class="ui-btn active" onclick="switchVideo(this, 'vid-palworld', '../TEMPLATES_FILE/pal_combat.mp4')">COMBAT</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-palworld', '../TEMPLATES_FILE/pal_mechanics.mp4')">MECHANIC</button>
+                  <button class="ui-btn" onclick="switchVideo(this, 'vid-palworld', '../TEMPLATES_FILE/pal_exploration.mp4')">WORLD</button>
               </div>
           </div>
 
@@ -129,10 +129,10 @@ if(!isset($_SESSION['logged_in'])) {
           <div class="game-card" data-title="valorant">
               <h2>VALORANT</h2>
               <video id="vid-valorant" muted loop controls>
-                  <source src="../TEMPLATES_FILE/VALORANT.mp4" type="video/mp4">
+                  <source src="../TEMPLATES_FILE/valo_combat.mp4" type="video/mp4">
               </video>
               <div class="video-controls">
-                  <button class="ui-btn active" onclick="switchVideo(this, 'vid-valorant', '../TEMPLATES_FILE/VALORANT.mp4')">COMBAT</button>
+                  <button class="ui-btn active" onclick="switchVideo(this, 'vid-valorant', '../TEMPLATES_FILE/valo_combat.mp4')">COMBAT</button>
                   <button class="ui-btn" onclick="switchVideo(this, 'vid-valorant', '../TEMPLATES_FILE/VALORANT_mechanic.mp4')">MECHANIC</button>
                   <button class="ui-btn" onclick="switchVideo(this, 'vid-valorant', '../TEMPLATES_FILE/VALORANT_world.mp4')">WORLD</button>
               </div>
